@@ -1,0 +1,8 @@
+.formButton {
+    font-size: 0.875rem;
+    color: teal;
+    background: transparent;
+    border: 1px teal solid;
+    padding: 5px 15px;
+    cursor: pointer;
+}

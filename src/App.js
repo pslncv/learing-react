@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import '../src/styles/App.css'
+import PostForm from './components/PostForm';
 import PostList from './components/PostList';
 
 function App() {
 
-  const [posts1, setPost1] = useState([
+  const [posts, setPosts] = useState([
     { // HTML
       id: 1,
       title: 'HTML',
@@ -22,28 +23,17 @@ function App() {
     },
   ])
 
-  const [posts2, setPost2] = useState([
-    { // Python
-      id: 1,
-      title: 'Python',
-      description: 'Python is a high-level programming language',
-    },
-    { // Jango
-      id: 2,
-      title: 'Jango',
-      description: 'Django is a high-level Python web framework',
-    },
-    { // MongoDB
-      id: 3,
-      title: 'MongoDB',
-      description: 'non-relational document database',
-    },
-  ])
+  const createPost = (newPost) => {
+    setPosts([
+      ...posts,
+      newPost,
+    ])    
+  }
 
   return (
     <div className='App'>
-      <PostList posts={posts1} title='Front-end разработка'/>
-      <PostList posts={posts2} title='Back-end разработка'/>
+      <PostForm create={createPost}></PostForm>
+      <PostList posts={posts} title='Front-end разработка'/>
     </div>
   );
 
