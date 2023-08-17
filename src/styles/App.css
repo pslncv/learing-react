@@ -45,3 +45,15 @@ h1, h2, h3, h4, h5, h6, p, a {
     padding: 7px;
 }
 
+.empty {
+    height: calc(100vh - 142px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty__text {
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 28px;
+}
+

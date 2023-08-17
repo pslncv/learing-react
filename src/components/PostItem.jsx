@@ -1,4 +1,5 @@
 import React from 'react';
+import FormButton from './UI/buttons/FormButton';
 
 const PostItem = (props) => {
     return (       
@@ -10,7 +11,9 @@ const PostItem = (props) => {
             </div>
         </div>
         <div className='post__actions'>
-            <button className='post__actions-delete'>Удалить!</button>
+            <FormButton onClick={() => {
+              props.remove(props.post)
+            }} className='post__actions-delete'>Удалить!</FormButton>
         </div>
     </div>
     );

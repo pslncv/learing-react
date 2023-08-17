@@ -30,10 +30,21 @@ function App() {
     ])    
   }
 
+ const removePost = (post) => {
+  setPosts(posts.filter(p => p.id !== post.id))
+ }
+
   return (
     <div className='App'>
       <PostForm create={createPost}></PostForm>
-      <PostList posts={posts} title='Front-end разработка'/>
+      {posts.length > 0
+        ? <PostList remove={removePost} posts={posts} title='Front-end разработка'/>
+        : <div className='empty'>
+            <div className='empty__text'>
+              Пусто :c
+            </div>
+          </div>
+      }
     </div>
   );
 
